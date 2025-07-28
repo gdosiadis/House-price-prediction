@@ -14,7 +14,8 @@ def predict(request):
     return render(request, "predict.html")
 
 def result(request):
-    data = pd.read_csv(r'C:\Users\gdosi\PycharmProjects\HousePricePrediction\HousePricePrediction\HousePricePrediction\USA_Housing.csv')
+    csv_path = settings.BASE_DIR / 'static' / 'data' / 'USA_Housing.csv'
+    data = pd.read_csv(csv_path)
     data = data.drop(['Address'], axis=1)
     X = data.drop('Price', axis=1)
     Y = data['Price']
