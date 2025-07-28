@@ -1,4 +1,6 @@
+from pathlib import Path
 from django.shortcuts import render
+from django.conf import settings
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
